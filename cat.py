@@ -19,6 +19,9 @@ COCO_CLASSES = [
 def detect_cat_in_webcam():
     # Open webcam (0 means the default webcam)
     cap = cv2.VideoCapture(0)
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 224)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 224)
+    cap.set(cv2.CAP_PROP_FPS, 36)
 
     if not cap.isOpened():
         print("Error: Could not open webcam.")
